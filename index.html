@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅遊網 - 機票、酒店、旅遊套票預訂</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 導航欄 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>旅遊網</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">機票</a>
+                <a href="#" class="nav-link">酒店</a>
+                <a href="#" class="nav-link">旅遊套票</a>
+                <a href="#" class="nav-link">租車</a>
+                <a href="#" class="nav-link">景點門票</a>
+                <a href="#" class="nav-link">旅遊保險</a>
+            </div>
+            <div class="nav-auth">
+                <button class="btn-login">登入</button>
+                <button class="btn-register">註冊</button>
+                <button class="btn-lang" id="lang-toggle">繁體中文｜English</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要橫幅 -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>探索世界的美好</h1>
+            <p>預訂您的完美旅程，享受最優惠的價格</p>
+        </div>
+    </section>
+
+    <!-- 搜尋區域 -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-tabs">
+                <button class="tab-btn active" data-tab="flights">
+                    <i class="fas fa-plane"></i>
+                    機票
+                </button>
+                <button class="tab-btn" data-tab="hotels">
+                    <i class="fas fa-bed"></i>
+                    酒店
+                </button>
+                <button class="tab-btn" data-tab="packages">
+                    <i class="fas fa-suitcase"></i>
+                    旅遊套票
+                </button>
+            </div>
+
+            <!-- 機票搜尋表單 -->
+            <div class="search-form active" id="flights-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>出發地</label>
+                        <input type="text" placeholder="香港 (HKG)" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>目的地</label>
+                        <input type="text" placeholder="東京 (NRT)" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>出發日期</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>回程日期</label>
+                        <input type="date" class="form-input">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>乘客</label>
+                        <select class="form-input">
+                            <option>1 成人</option>
+                            <option>2 成人</option>
+                            <option>3 成人</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>艙等</label>
+                        <select class="form-input">
+                            <option>經濟艙</option>
+                            <option>商務艙</option>
+                            <option>頭等艙</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="search-btn">搜尋機票</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 酒店搜尋表單 -->
+            <div class="search-form" id="hotels-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>目的地</label>
+                        <input type="text" placeholder="東京" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>入住日期</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>退房日期</label>
+                        <input type="date" class="form-input">
+                    </div>
+                    <div class="form-group">
+                        <label>房間數</label>
+                        <select class="form-input">
+                            <option>1 間</option>
+                            <option>2 間</option>
+                            <option>3 間</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>成人</label>
+                        <select class="form-input">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>兒童</label>
+                        <select class="form-input">
+                            <option>0</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="search-btn">搜尋酒店</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 熱門目的地 -->
+    <section class="destinations">
+        <div class="container">
+            <h2>熱門目的地</h2>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=400" alt="東京">
+                    <div class="card-content">
+                        <h3>東京</h3>
+                        <p>日本</p>
+                        <span class="price">由 HK$ 2,500 起</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="首爾">
+                    <div class="card-content">
+                        <h3>首爾</h3>
+                        <p>韓國</p>
+                        <span class="price">由 HK$ 2,200 起</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1536599018102-9f803c140fc1?w=400" alt="台北">
+                    <div class="card-content">
+                        <h3>台北</h3>
+                        <p>台灣</p>
+                        <span class="price">由 HK$ 1,800 起</span>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=400" alt="曼谷">
+                    <div class="card-content">
+                        <h3>曼谷</h3>
+                        <p>泰國</p>
+                        <span class="price">由 HK$ 1,500 起</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 優惠活動 -->
+    <section class="offers">
+        <div class="container">
+            <h2>限時優惠</h2>
+            <div class="offers-grid">
+                <div class="offer-card">
+                    <div class="offer-badge">限時優惠</div>
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=400" alt="歐洲旅遊">
+                    <div class="offer-content">
+                        <h3>歐洲精選旅遊</h3>
+                        <p>巴黎、羅馬、巴塞隆拿 10日遊</p>
+                        <div class="offer-price">
+                            <span class="original-price">HK$ 15,000</span>
+                            <span class="discount-price">HK$ 12,000</span>
+                        </div>
+                        <button class="btn-offer">立即預訂</button>
+                    </div>
+                </div>
+                <div class="offer-card">
+                    <div class="offer-badge">早鳥優惠</div>
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400" alt="韓國旅遊">
+                    <div class="offer-content">
+                        <h3>韓國首爾自由行</h3>
+                        <p>機票+酒店 5日4夜</p>
+                        <div class="offer-price">
+                            <span class="original-price">HK$ 4,500</span>
+                            <span class="discount-price">HK$ 3,800</span>
+                        </div>
+                        <button class="btn-offer">立即預訂</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 服務特色 -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>安全可靠</h3>
+                    <p>24/7 客戶支援，確保您的旅程安全無憂</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-tags"></i>
+                    <h3>最優價格</h3>
+                    <p>保證最優惠的價格，如有更便宜我們會退款差額</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>隨時預訂</h3>
+                    <p>手機應用程式讓您隨時隨地輕鬆預訂</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-gift"></i>
+                    <h3>會員獎勵</h3>
+                    <p>累積積分兌換免費機票和酒店住宿</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>關於我們</h4>
+                    <ul>
+                        <li><a href="#">公司簡介</a></li>
+                        <li><a href="#">聯絡我們</a></li>
+                        <li><a href="#">加入我們</a></li>
+                        <li><a href="#">新聞中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>客戶服務</h4>
+                    <ul>
+                        <li><a href="#">幫助中心</a></li>
+                        <li><a href="#">預訂查詢</a></li>
+                        <li><a href="#">退款政策</a></li>
+                        <li><a href="#">旅遊保險</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>旅遊產品</h4>
+                    <ul>
+                        <li><a href="#">機票</a></li>
+                        <li><a href="#">酒店</a></li>
+                        <li><a href="#">旅遊套票</a></li>
+                        <li><a href="#">租車</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>關注我們</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 旅遊網. 版權所有.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
